@@ -6,14 +6,14 @@ public class average {
     public static void main(String[] args) {
         int[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10 };
         int[] arr2 = {90, 100};
-        int min = getMin(arr);
 
 
-        System.out.println("Minimum Value is: "+min);
+
         System.out.println("The average is:" + average(arr));
         System.out.println("The average is:" + average(arr2));
-        //System.out.println(mode(arr.IndexOf(max)));
+        System.out.println("The maximum value of arr is"+ findMax(arr));
       //  System.out.println("the range is:" + range(arr));
+        System.out.println("the median is:" + median(arr));
     }
 
 
@@ -52,23 +52,23 @@ public class average {
     }
     return max;
   }
-   public static void range(String[] args) {
-
-   }
-
-  public static int getMin(int[] arr){
-    int minValue = inputArray[0];
-    for(int i = 0;i<arr.length;i++){
-      if(arr[i] < minValue){
-        minValue = arr[i];
+    public static int median(int[] arr){
+      if (arr.length%2 == 1){
+        return arr[arr.length/2];
       }
+      else{
+        //{1,2,3,4} size=4
+        //take 2, take 3
+        int topH=arr.length/2;
+        int botH=arr.length/2 -1;
+        //2-> index1 ,3-> index2
+        //4/2=index 2->3
+        return (topH+botH)/2;
+        //index 2-1=index 1->2
+        //return (index2+ index1)1/2
+      }
+
     }
-    return minValue;
-  }
-
-   }
-}
-
 
 
 
